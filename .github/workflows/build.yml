@@ -17,7 +17,7 @@ jobs:
   build-rust:
     strategy:
       matrix:
-        platform: [ubuntu-latest,windows]
+        platform: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v4
@@ -25,7 +25,7 @@ jobs:
           fetch-depth: 0
           submodules: recursive
       - name: Install Rust
-        run: rustup toolchain install stable --component llvm-tools-preview
+        run: rustup toolchain install nightly --component llvm-tools-preview rustfmt clippy  && rustup override set nightly
       - name: Install cargo-llvm-cov
         uses: taiki-e/install-action@cargo-llvm-cov
       - name: install nextest
