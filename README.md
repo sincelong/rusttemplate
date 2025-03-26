@@ -40,6 +40,8 @@ cargo install cargo-generate
 cargo generate tyr-rust-bootcamp/template
 ```
 
+修改cargo.toml中的crate名称，为当前项目名称
+
 ### 安装 pre-commit
 
 pre-commit 是一个代码检查工具，可以在提交代码前进行代码检查。
@@ -73,6 +75,10 @@ git cliff 是一个生成 changelog 的工具。
 ```bash
 cargo install git-cliff
 ```
+
+修改cliff.toml中的项目地址，符合当前项目地址
+
+
 
 ### 安装 cargo nextest
 
